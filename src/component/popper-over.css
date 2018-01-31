@@ -1,0 +1,106 @@
+.popper{
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 100px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.popper .head{
+  margin-bottom: 5px;
+}
+
+.popper .content{
+	line-height: 1.5;
+	margin-bottom: 5px;
+}
+
+.popper .btn{
+	margin-right: 5px;
+}
+
+.popper .btn:last-child{
+	margin-right: 0;
+}
+
+.popper .arrow{
+	width: 0;
+    height: 0;
+    border-style: solid;
+    position: absolute;
+    margin: 5px;
+    border-width: 6px;
+    border-color: transparent;
+}
+
+.popper .arrow::after{
+	content: '';
+    border-width: 5px;
+    border-style: solid;
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-color: transparent;
+}
+
+.popper[x-placement='left'] .arrow{
+    border-right-width: 0;
+    border-left-color: #ababab;
+    right: -6px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.popper[x-placement='left'] .arrow::after{
+    left: -6px;
+    top: -5px;
+    border-right-width: 0;
+    border-left-color: #fff;
+}
+
+.popper[x-placement='right'] .arrow{
+    border-left-width: 0;
+    border-right-color: #ababab;
+    left: -6px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.popper[x-placement='right'] .arrow::after{
+    left: 1px;
+    top: -5px;
+    border-left-width: 0;
+    border-right-color: #fff;
+}
+
+.popper[x-placement='top'] .arrow{
+    border-bottom-width: 0;
+    border-top-color: #ababab;
+    bottom: -6px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.popper[x-placement='top'] .arrow::after{
+    left: -5px;
+    top: -6px;
+    border-bottom-width: 0;
+    border-top-color: #fff;
+}
+
+.popper[x-placement='bottom'] .arrow{
+    border-top-width: 0;
+    border-bottom-color: #ababab;
+    top: -6px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.popper[x-placement='bottom'] .arrow::after{
+    left: -5px;
+    top: 1px;
+    border-top-width: 0;
+    border-bottom-color: #fff;
+}
