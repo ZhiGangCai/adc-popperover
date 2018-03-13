@@ -1,13 +1,12 @@
 /**
  * 本插件依赖popper.js
  */
-import Vue from 'vue'
-import Popper from 'popper.js'
-import './popper-over.css'
+import Popper from 'popper.js';
+import css from './popper-over.css';
 
 let popperOverPlugin = {};
 
-popperOverPlugin.install = function(){
+popperOverPlugin.install = function(Vue){
 
 	/**
 	 * @param  {object} options 参数对象
@@ -37,7 +36,7 @@ popperOverPlugin.install = function(){
 			return;
 		}
 
-		removeOtherPoppers(option.id);
+		removeOtherPoppers();
 
 		content = createElement('div');
 		btnWrap = createElement('div');
@@ -45,7 +44,7 @@ popperOverPlugin.install = function(){
 		popper = createElement('div');
 
 		popper.className = 'popper';
-		popper.id = option.id;
+
 		popper.appendChild(content);
 		popper.appendChild(btnWrap);
 		popper.appendChild(arrow);
@@ -110,9 +109,7 @@ function createArrow(placement){
 function removeOtherPoppers(currentId){
 	let poppers = document.querySelectorAll('.popper');
 	for(let i=0; i<poppers.length; i++){
-		if(poppers[i].id !== currentId){
-			poppers[i].remove();
-		}
+		poppers[i].remove();
 	}
 }
 

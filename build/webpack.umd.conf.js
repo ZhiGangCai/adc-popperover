@@ -1,5 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 module.exports = {
     entry: {
         index:'./src/component/popper-over.js'
@@ -27,14 +29,8 @@ module.exports = {
                 }
             },{
                 test: /\.css$/,
-                loader: 'css-loader',
-                options: {
-                    loaders: {
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-                    }
-                }
-            },
+                use: ['style-loader', 'css-loader']
+            }
         ]
     },
     resolve: {

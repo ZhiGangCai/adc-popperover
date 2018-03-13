@@ -11,7 +11,6 @@ const vm = new Vue({
 	methods: {
 		del(item, e){
 			this.$pop({
-				id: item,
 				ref: e.target,
 				btns: [{
 					name: '确定',
