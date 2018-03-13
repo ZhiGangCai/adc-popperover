@@ -37,9 +37,9 @@ this.$pop({
 参数 | 说明 | 类型 | 默认值 | 可选值 | 描述 |
 --- | --- | --- | --- | ---- | ----
 msg | 提示内容 | string | 确认删除吗？ |  |
-placement | 位置 | string | left | 可选值：top,right,bottom,left |
-offset | 偏移量 | string | '10px 10px' | 向触发节点（ref）的偏移量 |
-btns | 按钮组 | array | [{name: '确定'}, {name: '取消'}] | 按钮组，可配置回调函数和class，如{name: '确定', callback: ()=>{ alert('操作成功！'), class: 'btn btn-primary'}} |
+placement | 位置 | string | left | top,right,bottom,left |
+offset | 偏移量 | string | '10px 10px' |  |向触发节点（ref）的偏移量
+btns | 按钮组 | array | [{name: '确定'}, {name: '取消'}] | |按钮组，可配置回调函数和class，如{name: '确定', callback: ()=>{ alert('操作成功！'), class: 'btn btn-primary'}} 
 
 ## 更新日志
 
