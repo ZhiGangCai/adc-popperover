@@ -15,13 +15,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                options: {
-                    loaders: {
-                        'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-                    }
-                }
+                exclude: /node_modules/
             },{
                 test: /\.vue$/,
                 loader: 'vue-loader',
@@ -31,7 +25,16 @@ module.exports = {
                         'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
                     }
                 }
-            }
+            },{
+                test: /\.css$/,
+                loader: 'css-loader',
+                options: {
+                    loaders: {
+                        'scss': 'vue-style-loader!css-loader!sass-loader',
+                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+                    }
+                }
+            },
         ]
     },
     resolve: {

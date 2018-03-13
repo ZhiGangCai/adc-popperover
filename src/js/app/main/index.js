@@ -5,36 +5,22 @@ Vue.use(popperOverPlugin);
 
 const vm = new Vue({
 	el: '#app',
+	data: {
+		isShow: false
+	},
 	methods: {
 		del(item, e){
-			let placement;
-
-			switch(item){
-				case 1:
-					placement = 'left';
-					break;
-				case 2:
-					placement = 'right';
-					break;
-				case 3:
-					placement = 'bottom';
-					break;
-				case 4:
-					placement = 'top';
-					break;
-				default: 
-					placement = 'left';
-			}
-
 			this.$pop({
+				id: item,
 				ref: e.target,
-				msg: '确定删除吗？',
-				placement: placement,
-				offset: '10px,10px',
-				yes: () => {
-					console.log(this)
-					alert('删除了！');
-				}
+				btns: [{
+					name: '确定',
+					callback: ()=>{
+						alert('操作成功！');
+					}
+				}, {
+					name: '取消'
+				}]
 			})
 		}
 	}
