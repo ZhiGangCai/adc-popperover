@@ -10,16 +10,12 @@ const vm = new Vue({
 	},
 	methods: {
 		del(item, e){
+			e.stopPropagation();
 			this.$pop({
 				ref: e.target,
-				btns: [{
-					name: '确定',
-					callback: ()=>{
-						alert('操作成功！');
-					}
-				}, {
-					name: '取消'
-				}]
+				yes: () => {
+					alert(1)
+				}
 			})
 		}
 	}

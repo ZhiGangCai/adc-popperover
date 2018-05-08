@@ -1,15 +1,6 @@
 ## popperover
 
-简单的二次确认框
-
-## 在线demo
-
-[在线demo]({在线demo地址})
-
-## 功能点
-
-1.二次确认
-2.点击操作按钮触发回调事件
+二次确认
 
 ## 使用
 
@@ -28,19 +19,18 @@ Vue.use(Popper);
 
 然后再组件中：
 this.$pop({
-		参数列表，见下方
-	})
+	参数列表，见下方
+})
 ```
 
 #### 参数列表
 
-参数 | 说明 | 类型 | 默认值 | 可选值 | 描述 |
---- | --- | --- | --- | ---- | ----
-ref | 指定附着的节点 | elementObject |  | 必填，气泡要附着的节点，比如一个按钮节点 |
-msg | 提示内容 | string | 确认删除吗？ |  |
-placement | 位置 | string | left | top,right,bottom,left |
-offset | 偏移量 | string | '10px 10px' |  |向触发节点（ref）的偏移量
-btns | 按钮 | array | [{name: '确定'}, {name: '取消'}] | |按钮组，可配置回调函数和class，如{name: '确定', callback: ()=>{ alert('操作成功！'), class: 'btn btn-primary'}} 
+参数 |  类型 | 默认值  | 描述 
+--- |  --- | --- | ---- 
+ref | object | - | 必须，附着的节点
+msg |string | 确定操作吗？ | 提示内容 
+placement |string | left | 位置，可选值：top,right,bottom,left 
+offset |  string | '10px 10px' |  | 向附着节点（ref）的偏移量
 
 ## 更新日志
 
