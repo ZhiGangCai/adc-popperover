@@ -4,7 +4,7 @@
 import Popper from 'popper.js';
 import './popper-over.css';
 
-document.body.addEventListener('click', () => {
+document.addEventListener('click', () => {
 	removeOtherPoppers();
 });
 
@@ -36,7 +36,6 @@ popperOverPlugin.install = function(Vue){
 			console.error('options.ref 参数是必须的！');
 			return;
 		}
-		
 		content = createElement('div');
 		btnWrap = createElement('div');
 		arrow = createElement('div');
