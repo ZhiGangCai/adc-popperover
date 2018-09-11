@@ -21,6 +21,7 @@
     border-radius: 5px;
     padding: 5px 10px;
     display: table;
+    z-index: 10000;
     animation: fadeIn .3s;
 }
 .ct-popper.unactive{

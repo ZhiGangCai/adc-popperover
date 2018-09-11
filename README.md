@@ -32,6 +32,8 @@ msg |string | 确定操作吗？ | 提示内容
 placement |string | left | 位置，可选值：top,right,bottom,left 
 offset |  string | '10px 10px' |  | 向附着节点（ref）的偏移量
 yes | function | ()=>{} | 点击确定时触发的回调
+isButton | Boolean | true    | 是否显示按钮                       |
+cancel | function | ()=>{}  | 取消按钮点击事件 
 
 ## 更新日志
 
