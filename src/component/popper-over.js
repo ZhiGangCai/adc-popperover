@@ -4,9 +4,7 @@
 import Popper from 'popper.js';
 import './popper-over.css';
 
-document.addEventListener('click', () => {
-	removeOtherPoppers();
-});
+
 
 let popperOverPlugin = {};
 
@@ -63,6 +61,7 @@ popperOverPlugin.install = function(Vue){
 				popper.className = popper.className + ' unactive';
 				setTimeout(() => {
 					popper.remove();
+					document.removeEventListener('click', handler);
 				}, 300);
 			}
 
@@ -70,7 +69,7 @@ popperOverPlugin.install = function(Vue){
 		})
 
 		document.body.appendChild(popper);
-		popper.onclick = e => e.stopPropagation()
+		popper.onclick = e => e.stopPropagation();
 		
 		content.innerText = option.msg;
 		
@@ -83,10 +82,13 @@ popperOverPlugin.install = function(Vue){
 				arrow: {
 					element: '.ct-arrow'
 				}
-
+			},
+			onCreate(data){
+				setTimeout(()=>{
+					document.addEventListener('click', handler);
+				}, 500);
 			}
 		});
-
 	}
 }
 
@@ -102,6 +104,17 @@ function removeOtherPoppers(currentId){
 			poppers[i].remove();
 		}, 300);
 	}
+}
+
+function handler(){
+	let poppers = document.querySelectorAll('.ct-popper');
+	for(let i=0; i<poppers.length; i++){
+		poppers[i].className += ' unactive';
+		setTimeout(() => {
+			poppers[i].remove();
+		}, 300);
+	}
+	document.removeEventListener('click', handler);
 }
 
 export default popperOverPlugin;

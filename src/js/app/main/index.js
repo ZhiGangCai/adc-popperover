@@ -10,7 +10,7 @@ const vm = new Vue({
 	},
 	methods: {
 		del(item, e){
-			e.stopPropagation();
+			// e.stopPropagation();
 			this.$pop({
 				ref: e.target,
 				yes: () => {

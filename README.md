@@ -31,6 +31,7 @@ ref | object | - | 必须，附着的节点
 msg |string | 确定操作吗？ | 提示内容 
 placement |string | left | 位置，可选值：top,right,bottom,left 
 offset |  string | '10px 10px' |  | 向附着节点（ref）的偏移量
+yes | function | ()=>{} | 点击确定时触发的回调
 
 ## 更新日志
 
@@ -38,5 +39,5 @@ offset |  string | '10px 10px' |  | 向附着节点（ref）的偏移量
 
 ## 外部资源依赖列表
 
-- popper.js ^1.12.9
+- [popper.js](https://github.com/FezVrasta/popper.js) ^1.12.9
 
