@@ -86,7 +86,7 @@ popperOverPlugin.install = function(Vue){
 			onCreate(data){
 				setTimeout(()=>{
 					document.addEventListener('click', handler);
-				}, 500);
+				});
 			}
 		});
 	}
